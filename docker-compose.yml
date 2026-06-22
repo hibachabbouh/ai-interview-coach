@@ -1,0 +1,35 @@
+version: "3.9"
+
+services:
+  redis:
+    image: redis:7-alpine
+    container_name: search_cache_redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    command: ["redis-server", "--appendonly", "yes"]
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+    restart: unless-stopped
+
+  chroma:
+    # IMPORTANT: pin this to match the chromadb version installed in your
+    # Python environment (`pip show chromadb`). A client/server version
+    # mismatch is the most common source of "weird" errors with Chroma's
+    # HttpClient. Once you know your version, replace `:latest` with e.g.
+    # `chromadb/chroma:0.5.20`.
+    image: chromadb/chroma:latest
+    container_name: search_cache_chroma
+    ports:
+      - "8000:8000"
+    volumes:
+      - chroma_data:/chroma/chroma
+    restart: unless-stopped
+
+volumes:
+  redis_data:
+  chroma_data:

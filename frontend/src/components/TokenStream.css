@@ -1,0 +1,104 @@
+.stream-box {
+  background: var(--c-bg-2);
+  border: 1px solid var(--c-border);
+  border-radius: var(--r-xl);
+  overflow: hidden;
+  transition: border-color var(--t-base);
+}
+
+.stream-box:has(.cursor) {
+  border-color: rgba(99,102,241,0.4);
+  box-shadow: 0 0 20px rgba(99,102,241,0.08);
+}
+
+.stream-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--sp-3) var(--sp-6);
+  border-bottom: 1px solid var(--c-border);
+  background: var(--c-surface);
+}
+
+.stream-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--t-dim);
+}
+
+.stream-live {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--c-success);
+}
+
+.live-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--c-success);
+  animation: pulse-dot 1.2s ease-in-out infinite;
+}
+
+.stream-content {
+  padding: var(--sp-6);
+  min-height: 180px;
+  max-height: 520px;
+  overflow-y: auto;
+  font-size: 0.9375rem;
+  line-height: 1.8;
+  color: var(--t-base);
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.stream-text {
+  /* Text renders naturally; cursor appended inline */
+}
+
+.cursor {
+  display: inline-block;
+  width: 2px;
+  height: 1.1em;
+  background: var(--c-primary);
+  margin-left: 2px;
+  vertical-align: text-bottom;
+  border-radius: 1px;
+  animation: blink-cursor 0.9s step-start infinite;
+}
+
+/* Empty state */
+.stream-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sp-4);
+  padding: var(--sp-12) var(--sp-6);
+  border: 1px dashed var(--c-border);
+  border-radius: var(--r-xl);
+  text-align: center;
+}
+
+.stream-empty-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  background: var(--c-bg-2);
+  border: 1px solid var(--c-border);
+  border-radius: 50%;
+  color: var(--t-dim);
+}
+
+.stream-empty p {
+  font-size: 0.9375rem;
+  color: var(--t-dim);
+  max-width: 320px;
+}

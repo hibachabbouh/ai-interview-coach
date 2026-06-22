@@ -1,0 +1,127 @@
+[
+  {
+    "session_id": "pipe-001",
+    "mode": "pipeline",
+    "label": "Pipeline — réponse générique",
+    "question": "Design a real-time object detection system for self-driving cars using PyTorch. The system should be able to detect pedestrians, cars, and bicycles. Consider the trade-offs between model complexity, accuracy, and computational efficiency. How would you handle edge cases such as varying lighting conditions and occlusion?",
+    "user_answer": "I would carefully analyze the problem, choose appropriate algorithms based on the data characteristics, validate with cross-validation, and optimize hyperparameters systematically.",
+    "faithfulness": 1.0,
+    "answer_relevance": 1.0,
+    "expected_faithfulness": null,
+    "expected_relevance": "medium",
+    "latency_seconds": 24.29,
+    "tokens_per_second": 39.7,
+    "token_usage": {
+      "llama-3.1-8b-instant": {
+        "input": 662,
+        "output": 306
+      },
+      "llama-3.3-70b-versatile": {
+        "input": 5106,
+        "output": 318
+      },
+      "openai/gpt-oss-120b": {
+        "input": 221,
+        "output": 341
+      }
+    },
+    "estimated_cost_usd": 0.004224,
+    "error": null
+  },
+  {
+    "session_id": "pipe-002",
+    "mode": "pipeline",
+    "label": "Pipeline — réponse hors sujet (cuisine)",
+    "question": null,
+    "user_answer": "I love cooking pasta. First I boil water, then add salt. I think al dente is the best texture for spaghetti.",
+    "faithfulness": null,
+    "answer_relevance": null,
+    "expected_faithfulness": null,
+    "expected_relevance": "low",
+    "latency_seconds": 2.2,
+    "tokens_per_second": null,
+    "token_usage": {},
+    "estimated_cost_usd": 0.0,
+    "error": "1 validation error for GuardrailOutput\nreason\n  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.13/v/string_type"
+  },
+  {
+    "session_id": "off-001",
+    "mode": "offline",
+    "label": "Offline — réponse correcte (churn)",
+    "question": "Design a machine learning pipeline to predict customer churn for a telecom company, including data preprocessing, feature engineering, model selection, and hyperparameter tuning. How would you handle class imbalance?",
+    "user_answer": "I would use SMOTE to handle class imbalance and engineer RFM features (Recency, Frequency, Monetary) plus contract type and tenure. For model selection I would compare XGBoost and LightGBM with 5-fold cross-validation, tune hyperparameters with Bayesian optimization via Optuna, and evaluate with AUC-ROC and Precision-Recall curves rather than accuracy.",
+    "faithfulness": 1.0,
+    "answer_relevance": 1.0,
+    "expected_faithfulness": "high",
+    "expected_relevance": "high",
+    "latency_seconds": 0.0,
+    "tokens_per_second": null,
+    "token_usage": {},
+    "estimated_cost_usd": 0.0,
+    "error": null
+  },
+  {
+    "session_id": "off-002",
+    "mode": "offline",
+    "label": "Offline — réponse hors sujet (cuisine)",
+    "question": "Design a machine learning pipeline to predict customer churn for a telecom company, including data preprocessing, feature engineering, model selection, and hyperparameter tuning. How would you handle class imbalance?",
+    "user_answer": "I love cooking pasta. First I boil water with salt, then I cook spaghetti for 8 minutes. Al dente texture is best. I serve with tomato sauce and parmesan cheese. This is my favorite dinner recipe.",
+    "faithfulness": null,
+    "answer_relevance": null,
+    "expected_faithfulness": "low",
+    "expected_relevance": "low",
+    "latency_seconds": 0.0,
+    "tokens_per_second": null,
+    "token_usage": {},
+    "estimated_cost_usd": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kmj80gbcebmsg5808nzfaqv8` service tier `on_demand` on tokens per minute (TPM): Limit 12000, Used 11894, Requested 700. Please try again in 2.97s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}"
+  },
+  {
+    "session_id": "off-003",
+    "mode": "offline",
+    "label": "Offline — réponse vague (insuffisante)",
+    "question": "Design a machine learning pipeline to predict customer churn for a telecom company, including data preprocessing, feature engineering, model selection, and hyperparameter tuning. How would you handle class imbalance?",
+    "user_answer": "I would use machine learning and do some data analysis. I would pick a good model and tune it to get better results.",
+    "faithfulness": 1.0,
+    "answer_relevance": 1.0,
+    "expected_faithfulness": "high",
+    "expected_relevance": "medium",
+    "latency_seconds": 0.0,
+    "tokens_per_second": null,
+    "token_usage": {},
+    "estimated_cost_usd": 0.0,
+    "error": null
+  },
+  {
+    "session_id": "off-004",
+    "mode": "offline",
+    "label": " Offline — réponse senior (MLOps)",
+    "question": "Design a scalable ML platform for a senior ML engineer position. Include orchestration, experiment tracking, feature store, model serving, and monitoring. Discuss key trade-offs.",
+    "user_answer": "I would use Kubernetes for orchestration and MLflow for experiment tracking. Feast as a feature store eliminates train/serve skew. For serving, Triton Inference Server with dynamic batching reduces GPU memory vs TorchServe. Canary deployments via Argo Rollouts. Monitoring: Prometheus + Grafana for infrastructure, Evidently AI for data drift detection.",
+    "faithfulness": 1.0,
+    "answer_relevance": 1.0,
+    "expected_faithfulness": "high",
+    "expected_relevance": "high",
+    "latency_seconds": 0.0,
+    "tokens_per_second": null,
+    "token_usage": {},
+    "estimated_cost_usd": 0.0,
+    "error": null
+  },
+  {
+    "session_id": "off-005",
+    "mode": "offline",
+    "label": "Offline — réponse hallucinée (faits inventés)",
+    "question": "Design a machine learning pipeline to predict customer churn for a telecom company. How would you handle class imbalance and evaluate the model?",
+    "user_answer": "I would use QuantumBoost algorithm (invented by DeepMind in 2023) with HyperSMOTE++ resampling and evaluate using the ChurnScore metric developed by Google. The model would achieve 99.9% accuracy guaranteed by the TelecomML certification standard ISO-9999-ML.",
+    "faithfulness": 1.0,
+    "answer_relevance": 0.6,
+    "expected_faithfulness": "low",
+    "expected_relevance": "medium",
+    "latency_seconds": 0.0,
+    "tokens_per_second": null,
+    "token_usage": {},
+    "estimated_cost_usd": 0.0,
+    "error": null
+  }
+]

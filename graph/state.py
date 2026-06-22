@@ -1,0 +1,59 @@
+from typing import TypedDict, Optional, List, Dict, Any
+
+
+class InterviewState(TypedDict):
+    turn: int
+    conversation_history: List[Dict[str, str]]
+    current_question: Optional[str]
+    awaiting_answer: bool
+    question_count: int
+    score_history: List[float]
+    asked_questions: List[str]
+    target_question_count: int
+    session_complete: bool
+    session_id: str
+    language: str
+    user_input: str
+    allowed: bool
+    risk_level: str
+    guardrail_reason: str
+    skip_guardrail: bool
+    is_ambiguous: bool
+    missing_fields: List[str]
+    clarification_question: Optional[str]
+    ambiguity_role: Optional[str]
+    ambiguity_experience_level: Optional[str]
+    memory_role: Optional[str]
+    memory_experience_level: Optional[str]
+    role: Optional[str]
+    experience_level: Optional[str]
+    company: Optional[str]
+    skills: List[str]
+    weaknesses: List[str]
+    goals: List[str]
+    route: Optional[str]
+    route_confidence: float
+    question_id: Optional[str]
+    question: Optional[str]
+    difficulty: Optional[str]
+    topics: List[str]
+    user_answer: Optional[str]
+    technical_score: float
+    communication_score: float
+    confidence_score: float
+    overall_score: float
+    evaluation_overall_score: float
+    evaluation_strengths: List[str]
+    evaluation_weaknesses: List[str]
+    fusion_overall_score: float
+    fusion_strengths: List[str]
+    fusion_weaknesses: List[str]
+    recommendations: List[str]
+    final_overall_score: float
+    final_report: Optional[str]
+    title: Optional[str]
+    summary: Optional[str]
+    next_steps: List[str]
+    current_agent: Optional[str]
+    retrieved_context: List[str]
+    metadata: Dict[str, Any]

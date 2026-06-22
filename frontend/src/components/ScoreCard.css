@@ -1,0 +1,98 @@
+.score-card {
+  padding: var(--sp-8);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-8);
+}
+
+.score-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--sp-3);
+}
+
+.overall-badge {
+  padding: var(--sp-2) var(--sp-4);
+  border-radius: var(--r-full);
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+.overall-badge.good { background: rgba(16,185,129,0.15); color: #6ee7b7; border: 1px solid rgba(16,185,129,0.3); }
+.overall-badge.ok   { background: rgba(245,158,11,0.15); color: #fcd34d; border: 1px solid rgba(245,158,11,0.3); }
+.overall-badge.low  { background: rgba(239,68,68,0.15);  color: #fca5a5; border: 1px solid rgba(239,68,68,0.3); }
+
+.score-circles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-6);
+  justify-content: center;
+}
+
+.score-circle-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sp-2);
+}
+
+.score-circle-svg {
+  overflow: visible;
+  transform: rotate(-90deg);
+}
+
+.score-circle-value {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  font-weight: 700;
+  transform: rotate(90deg);
+  transform-origin: center;
+}
+
+.score-circle-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--t-muted);
+  letter-spacing: 0.04em;
+}
+
+.score-lists {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-6);
+}
+
+@media (max-width: 640px) {
+  .score-lists { grid-template-columns: 1fr; }
+}
+
+.score-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+}
+
+.score-list-title {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.strengths-title { color: var(--c-success); }
+.weaknesses-title { color: var(--c-warning); }
+
+.score-list ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+}
+
+.score-list li {
+  font-size: 0.875rem;
+  color: var(--t-muted);
+  padding-left: var(--sp-3);
+  border-left: 2px solid var(--c-border-2);
+  line-height: 1.5;
+}
