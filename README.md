@@ -108,9 +108,7 @@ Redis + ChromaDB      LLM Gateway (Groq)
                       │
                       ▼
                  Tavily Search
-```
 
-Full diagram: `docs/architecture.mmd`
 
 ---
 
