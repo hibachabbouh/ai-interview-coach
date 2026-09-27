@@ -2,7 +2,7 @@
 
 > A production-style multi-agent AI system that conducts realistic technical and behavioral interviews, evaluates answers across multiple dimensions, and streams real-time feedback.
 
-Built as a final-year engineering project (PFE), this system demonstrates end-to-end AI system design using a 9-agent LangGraph pipeline, FastAPI backend, React frontend, hybrid retrieval caching (Redis + ChromaDB), and an evaluation suite powered by DeepEval.
+This system demonstrates end-to-end AI system design using a 9-agent LangGraph pipeline, FastAPI backend, React frontend, hybrid retrieval caching (Redis + ChromaDB), and an evaluation suite powered by DeepEval.
 
 ---
 
